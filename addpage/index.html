@@ -21,6 +21,12 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
@@ -31,7 +37,7 @@
 
     <body>
         <header class="page-header">
-            <p class="title">🗓 Add a Bulletin Board Entry!</p>
+            <p class="title">🗓 Add a Bulletin Board Entry! 🗓</p>
             <nav>
                 <a href="../">Bulletin</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
@@ -41,41 +47,50 @@
         <main>
             <form id="add-entry-form">
                 <label>
-                    <div>Category</div>
-                    <select
-                        id="category-dropdown"
-                        name="category"
-                        required
-                        placeholder="Select a category..."
-                    >
-                        <option value="for-sale">For sale</option>
-                        <option value="event">Event</option>
-                        <option id="food">Food</option>
-                        <option id="for-free">For free</option>
-                        <option id="work">Work</option>
-                        <option value="misc">Misc</option>
+                    Category
+                    <select id="category-dropdown" name="category" required>
+                        <option disabled selected value>Select a category...</option>
+                        <option value="for-sale">🏷For sale</option>
+                        <option value="event">🎤Event</option>
+                        <option id="food">🥗Food</option>
+                        <option id="for-free">🤑For free</option>
+                        <option id="work">📎Work</option>
+                        <option value="misc">👻Misc</option>
                     </select>
                 </label>
 
                 <label>
-                    <div>Title</div>
-                    <input name="title" placeholder="Add a title for your entry" required />
+                    Title
+                    <textarea
+                        placeholder="Add a title for your entry"
+                        required
+                        name="title"
+                        rows="3"
+                        columns="45"
+                    ></textarea>
                 </label>
 
                 <label>
-                    <div>Description</div>
-                    <input name="description" placeholder="Tell us some more" required />
+                    Description
+
+                    <textarea
+                        name="description"
+                        placeholder="Tell us some more"
+                        required
+                        rows="5"
+                    ></textarea>
                 </label>
 
                 <label>
-                    <div>Contact</div>
-                    <input
+                    Contact
+                    <textarea
                         name="contact"
                         placeholder="How would you like people to get ahold of you?"
                         required
-                    />
+                        rows="2"
+                    ></textarea>
                 </label>
-                <button>Submit entry</button>
+                <button id="submit-button">Submit entry</button>
                 <p id="error-display"></p>
             </form>
         </main>
