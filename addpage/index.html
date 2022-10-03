@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Bulletin Board</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="app.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/board.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <p class="title">🗓 Add a Bulletin Board Entry!</p>
+            <nav>
+                <a href="../">Bulletin</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="add-entry-form">
+                <label>
+                    <div>Category</div>
+                    <select
+                        id="category-dropdown"
+                        name="category"
+                        required
+                        placeholder="Select a category..."
+                    >
+                        <option value="for-sale">For sale</option>
+                        <option value="event">Event</option>
+                        <option id="food">Food</option>
+                        <option id="for-free">For free</option>
+                        <option id="work">Work</option>
+                        <option value="misc">Misc</option>
+                    </select>
+                </label>
+
+                <label>
+                    <div>Title</div>
+                    <input name="title" placeholder="Add a title for your entry" required />
+                </label>
+
+                <label>
+                    <div>Description</div>
+                    <input name="description" placeholder="Tell us some more" required />
+                </label>
+
+                <label>
+                    <div>Contact</div>
+                    <input
+                        name="contact"
+                        placeholder="How would you like people to get ahold of you?"
+                        required
+                    />
+                </label>
+                <button>Submit entry</button>
+                <p id="error-display"></p>
+            </form>
+        </main>
+    </body>
+</html>
