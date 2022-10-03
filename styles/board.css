@@ -7,7 +7,7 @@
 #add-entry-form {
     background-color: #efe5d6;
     display: grid;
-    grid-template-rows: 1.5fr 2fr 2.5fr 2fr;
+    grid-template-rows: 1.5fr 2fr 2.5fr 1.5fr 2fr;
     width: 500px;
     justify-content: center;
     border-radius: 25px;
@@ -55,4 +55,8 @@ form button {
     width: 100%;
     font-size: 1.15em;
     padding: 5px;
+}
+
+#image-input {
+    padding-top: 10px;
 }
