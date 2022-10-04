@@ -28,3 +28,6 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createEntry(entry) {
+    return await client.from('entries').insert(entry);
+}
