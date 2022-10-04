@@ -46,7 +46,7 @@
 
         <main>
             <form id="add-entry-form">
-                <label>
+                <label id="category-section">
                     Category
                     <select id="category-dropdown" name="category" required>
                         <option disabled selected value>Select a category...</option>
@@ -80,19 +80,6 @@
                         rows="5"
                     ></textarea>
                 </label>
-
-                export async function uploadImage(bucketName, imagePath, imageFile) { // we can use
-                the storage bucket to upload the image, // then use it to get the public URL const
-                bucket = client.storage.from(bucketName); const response = await
-                bucket.upload(imagePath, imageFile, { cacheControl: '3600', // in this case, we will
-                _replace_ any // existing file with same name. upsert: true, }); if (response.error)
-                { // eslint-disable-next-line no-console console.log(response.error); return null; }
-                // Construct the URL to this image: const url =
-                `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`; // URL Looks like:
-                //
-                https://nwxkvnsiwauieanvbiri.supabase.co/storage/v1/object/public/images/pets/984829079656/Franky.jpeg
-                return url; }
-
                 <label>
                     Contact
                     <textarea
@@ -101,6 +88,27 @@
                         required
                         rows="2"
                     ></textarea>
+                </label>
+
+                <label id="image-section">
+                    Image
+                    <input
+                        type="file"
+                        id="image-input"
+                        name="image"
+                        placeholder="Choose an image to upload..."
+                        required
+                    />
+                    <img
+                        id="image-placeholder"
+                        alt="bulletin-placeholder"
+                        src="../assets/bulletin-board.png"
+                    />
+                    <a
+                        href="https://www.flaticon.com/free-icons/bulletin-board"
+                        title="bulletin board icons"
+                        >Bulletin board icons created by Mihimihi - Flaticon</a
+                    >
                 </label>
                 <button id="submit-button">Submit entry</button>
                 <p id="error-display"></p>

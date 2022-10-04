@@ -11,7 +11,7 @@
     width: 500px;
     justify-content: center;
     border-radius: 25px;
-    height: 500px;
+    height: 600px;
 }
 
 #submit-button {
@@ -59,4 +59,18 @@ form button {
 
 #image-input {
     padding-top: 10px;
+}
+
+#image-placeholder {
+    width: 40%;
+}
+
+#image-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+}
+
+#category-section {
+    padding-top: 20px;
 }
