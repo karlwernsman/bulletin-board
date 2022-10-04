@@ -17,8 +17,9 @@ entryForm.addEventListener('submit', async (e) => {
 
     const formData = new FormData(entryForm);
     const imageFile = formData.get('image');
+    console.log(imageFile);
     const randomFolder = Math.floor(Date.now() * Math.random());
-    const imagePath = `photos/$${randomFolder}/${imageFile.name}`;
+    const imagePath = `photos/${randomFolder}/${imageFile.name}`;
     const url = await uploadImage('photos', imagePath, imageFile);
 
     const entry = {
