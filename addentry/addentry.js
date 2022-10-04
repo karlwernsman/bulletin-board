@@ -19,6 +19,7 @@ entryForm.addEventListener('submit', async (e) => {
         title: formData.get('title'),
         description: formData.get('description'),
         category: formData.get('category'),
+        contact: formData.get('contact'),
     };
 
     const response = await createEntry(entry);
