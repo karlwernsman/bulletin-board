@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Bulletin Board</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="addentry.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/board.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <p class="title">🗓 Add a Bulletin Board Entry! 🗓</p>
+            <nav>
+                <a href="../">Bulletin</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="add-entry-form">
+                <label id="category-section">
+                    Category
+                    <select id="category-dropdown" name="category" required>
+                        <option disabled selected value>Select a category...</option>
+                        <option value="for-sale">🏷For sale</option>
+                        <option value="event">🎤Event</option>
+                        <option id="food">🥗Food</option>
+                        <option id="for-free">🤑For free</option>
+                        <option id="work">📎Work</option>
+                        <option value="misc">👻Misc</option>
+                    </select>
+                </label>
+
+                <label>
+                    Title
+                    <textarea
+                        placeholder="Add a title for your entry"
+                        required
+                        name="title"
+                        rows="3"
+                        columns="45"
+                    ></textarea>
+                </label>
+
+                <label>
+                    Description
+
+                    <textarea
+                        name="description"
+                        placeholder="Tell us some more"
+                        required
+                        rows="5"
+                    ></textarea>
+                </label>
+                <label>
+                    Contact
+                    <textarea
+                        name="contact"
+                        placeholder="How would you like people to get ahold of you?"
+                        required
+                        rows="2"
+                    ></textarea>
+                </label>
+
+                <label id="image-section">
+                    Image
+                    <input
+                        type="file"
+                        id="image-input"
+                        name="image"
+                        placeholder="Choose an image to upload..."
+                        required
+                    />
+                    <img
+                        id="image-placeholder"
+                        alt="bulletin-placeholder"
+                        src="../assets/bulletin-board.png"
+                    />
+                    <!-- <a
+                        href="https://www.flaticon.com/free-icons/bulletin-board"
+                        title="bulletin board icons"
+                        >Bulletin board icons created by Mihimihi - Flaticon</a
+                    > -->
+                </label>
+                <button id="submit-button">Submit entry</button>
+                <p id="error-display"></p>
+            </form>
+        </main>
+    </body>
+</html>

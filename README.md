@@ -24,3 +24,29 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+##HTML
+bulletin list page - ul
+add entry page - form
+-select categories with options
+-textarea title
+-textarea description
+-input for image
+-textarea for contact info
+-submit button
+
+##State
+let error = null;
+let entries = [];
+
+##Events on home bulletin page
+-windows load eventListener
+-displaying of bulletin entries
+
+##Events on add entry page
+-select for categories dropdown (submit eventListener)
+-input or text-area for title of entry
+-input or text-area for description of entry
+-file input for image uploading
+-input or text-area for contact info
+-submit eventListener for posting entry
